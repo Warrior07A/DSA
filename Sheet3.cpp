@@ -81,3 +81,79 @@ int main(){
   }
 }
 
+
+(E) Lowest Number
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  cin>>N;
+  int A[N];
+  for (int i=0;i<N;i++){
+    cin>>A[i];
+  }
+  int low=A[0];
+  int index=1;
+  for (int i=0;i<N;i++){                          
+    if (A[i]<low){                                  //dont try A[i]<A[i+1]
+      low=A[i];                                      //we have to compare A[i] with lowest not with A[i+1] i.e. next one
+      index=(i+1);
+    }
+  }
+
+  cout<<low<<" "<<index;
+}
+
+//(F)REVERSING
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  cin>>N;
+  int A[N];
+  for (int i=0;i<N;i++){
+    cin>>A[i];
+  }
+  int B[N];
+  for (int i=0;i<N;i++){
+    B[N-i-1]=A[i];                      //ASSIGNING TO THE NEW ELEMENT FROM THE LAST!
+    
+  }
+  for (int i=0;i<N;i++){
+    cout<<B[i]<<" ";
+  }
+}
+
+
+//(G) PALINDROME ARRAY
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  cin>>N;
+  int A[N];
+  for (int i=0;i<N;i++){
+    cin>>A[i];
+  }
+  string what="YES";
+
+    for(int i=0;i<N;i++){
+      if(A[i]==A[N-i-1]){
+        what="YES";
+      }
+      else{
+        what="NO";
+        break;
+      }
+    }
+  cout<<what;
+  
+
+}
