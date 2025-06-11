@@ -157,3 +157,64 @@ int main(){
   
 
 }
+
+//(H) SORTING.................................................................................
+
+//(I)SMALLEST PAIR
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int T;
+  cin>>T;
+  while(T--){                                               //will continue until test case ends
+    int N;
+    cin>>N;
+    int A[N];
+    for(int i=0;i<N;i++){
+      cin>>A[i];
+    }
+    int min=INT_MAX;
+    for (int i=0;i<N;i++){                             // will do like (0,1)(0,2)(0,3)..........(N,N)
+      for (int j=i+1;j<N;j++){
+        int cur=(A[i]+A[j]+j-i);            
+        if (cur<min){
+          min=cur;
+        }
+      }
+    }
+    cout<<min<<endl;                                    //MAKE SURE TO cout it in while loop
+  }
+}
+
+//(J)LUCKY ARRAY
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  cin>>N;
+  int A[N];
+  for (int i=0;i<N;i++){
+    cin>>A[i];
+  }
+  int minimum=A[0];
+  for (int i=1;i<N;i++){
+    if(A[i]<minimum){
+      minimum=A[i];
+    }
+  }
+  int count=0;
+  for(int i=0;i<N;i++){
+    if (minimum==A[i]){
+      count+=1;
+    }
+  }
+  if ((count%2)==0){
+    cout<<"Unlucky";
+  }else if (count%2!=0){
+    cout<<"Lucky";
+  }
+  
+}
+

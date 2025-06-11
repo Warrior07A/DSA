@@ -25,4 +25,22 @@ int main(){
   
   // y is now 5
 
-  
+  //SORTING/////////////////////////////
+ // inbuilt function
+  //first index...last index
+ sort(A[0],A[N]);
+
+ //selection sort \...............................................................
+
+
+ //CONSTANTS IN CPP
+ //INT_MIN/INT_MAX/LONG_MAX/LONG_MIN/
+
+ //NESTED LOOPS ITERATION
+ for(int i=0;i<N;i++){
+  for(int j=i+1;j<N;j++){         //this way u can get (0,1)(0,2)(0,3).....(0,N)...
+                                  //then (1,1)(1,2)(1,3)..........(1,N) tilll(N,N)
+  }
+ }
+
+ 
