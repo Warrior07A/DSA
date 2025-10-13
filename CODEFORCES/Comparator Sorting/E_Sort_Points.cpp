@@ -9,19 +9,19 @@ struct coord
 };
 
 bool comp(coord a,coord b){
-    if (a.x > b.x){
-        return false;
+    if (a.x < b.x){
+        return true;
     }
     else if (a.x == b.x){
-        if (a.y > b.y){
-            return false;
+        if (a.y < b.y){
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
     else{
-        return true;
+        return false;
     }
 }
 

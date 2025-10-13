@@ -2,13 +2,13 @@
 using namespace std;
 #define endl '\n'
 
-bool comp(int a, int b){
-    int lst_a = abs(a % 10);
-    int lst_b = abs(b % 10);
-    if (lst_a < lst_b){
+bool comp(int a,int b){
+    int abs_a=abs(a);
+    int abs_b=abs(b);
+    if(abs_a < abs_b){
         return true;
     }
-    else if (lst_a==lst_b){
+    else if (abs_a == abs_b){
         if (a < b){
             return true;
         }
@@ -19,7 +19,6 @@ bool comp(int a, int b){
     else{
         return false;
     }
-
 }
 
 int main() {
