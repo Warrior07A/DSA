@@ -1,39 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
+#define int long long
 
-int main() {
+signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int t;
     cin>>t;
-    while(t--){
-        int n , k;
+    while(t--)
+    {
+        int n,k;
         cin>>n>>k;
-        vector <int> v1;
-        vector <int> v2;
-        for (int i=0;i<n;i++)
+        int arr[n];
+        set<int>s;
+        int arr2[n];
+        bool noequal = false;
+        for( int i=0;i<n;i++)
         {
-            int p;
-            cin>>p;
-            v1.push_back(p);
+            cin>>arr[i];
+            arr2[i]=arr[i];
+            s.insert(arr[i]);
         }
-
-        v2=v1;
-        
-        sort(v2.begin(),v2.end());
-        
-        if(k==1){
-            if (v1==v2){
-                cout<<"YES";
+        if (k>1 or s.size()==1)
+        {
+            cout<<"YES"<<endl;
+        }
+        else if (k==1)
+        {
+            sort(arr2,arr2+n);
+            for(int i=0;i<n;i++)
+            {
+                if(arr[i] != arr2[i])
+                {
+                    noequal = true;
+                }
+            }
+            if (!noequal){
+                cout <<"YES" << endl;
             }
             else{
-                cout<<"NO";
+                cout << "NO" << endl;
             }
         }
-        else if (k>1){
-            cout<<"YES";
+        else{
+            cout << "NO"<<endl;
         }
-        cout<<endl;
+        
     }
 }

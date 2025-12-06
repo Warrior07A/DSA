@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+    vector <int> v;
+    for(int i=0;i<n;i++)
+    {
+        v.push_back(n+1-arr[i]);
+    }
+    for( auto it : v)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    }    
+        
+    
+}
