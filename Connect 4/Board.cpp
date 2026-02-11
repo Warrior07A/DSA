@@ -20,5 +20,8 @@ public :
             }
             cout << endl;
         }
+        for(int i=1;i<=COLS;i++){
+            cout << i << " ";   
+        }
     }
 };

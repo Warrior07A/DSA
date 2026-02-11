@@ -24,25 +24,20 @@ public:
         b.display();
         while(BoardNotFull(b)){
             cout << "Player " << currPlayer.name << " / " << currPlayer.ch  << " turn" << endl;
-            
             int col;
             cout << "Enter Column No : "<< endl;
             cin >> col;
+            system("cls");
             col--;
             
-            while(true){
-                if (!isvalid(col)){
-                    cout << "Incorrect column ! Enter again  : "<< endl;
-                    cin >> col;
-                    b.display();
-                    continue;
-                }
-                else break;
+            if (!isvalid(col)){
+                continue;
             }
                            
             int row = place_chip(col , currPlayer.ch);
             if (hasWon(row , col)){
                 cout << "Player " << currPlayer.name <<" / " << currPlayer.ch << " has won !!";
+                b.display();
                 return ; 
             }
             b.display();
