@@ -3,6 +3,7 @@ using namespace std;
 #include "Player.cpp"
 #include "Board.cpp"
 
+int K = 0;
 class Game
 {
     Player p1;
@@ -13,8 +14,17 @@ public:
     {
         p1.input();
         p2.input();
+        int r  , c;
+        
+        cout << "Enter Row: " ;
+        cin >> r;
+        cout << "Enter Column: ";
+        cin >> c;
 
-        b.init();
+        cout << "Enter Number of connects you wanna make !" ;
+        cin >> K;
+        b = Board (r,c);
+        // b.init(); 
         // b.display();
     }
 
@@ -78,7 +88,7 @@ public:
         for(int i=0;i<4;i++){
             int cnt1 = countsimilar(row, col , DirectionV[i][0]) - 1;
             int cnt2 = countsimilar(row, col , DirectionV[i][1]) - 1;
-            if (cnt1 +  1  + cnt2  >= 4) return true;
+            if (cnt1 +  1  + cnt2  >= K) return true;
         }
         return false;
     }

@@ -1,17 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int ROWS = 6;
-const int COLS = 7;
+int ROWS = 6;
+int COLS = 7;
 
 class Board{
 public : 
-    char arr[6][7];
-    vector <string> v;
-    // Board(){}
-    // Board(int r ,c ){
-        // v
-    // }
+    // char arr[6][7];
+    vector <string> arr;
+    Board(){}
+    Board(int r ,int c ){
+        string s (c, '-');
+        arr.assign(r,s);
+        ROWS = r;
+        COLS = c;
+
+    }
 
     void init(){
         for(int i=0;i<ROWS;i++){
@@ -24,12 +28,15 @@ public :
     void display(){
         for(int i=0;i<ROWS;i++){
             for(int j=0;j<COLS;j++){
-                cout << arr[i][j] << " ";
+                if (COLS > 9) cout << arr[i] [j] << "  ";
+                else cout << arr[i][j] << " ";
             }
             cout << endl;
         }
         for(int i=1;i<=COLS;i++){
-            cout << i << " ";   
+            if (i <= 9) cout << i << "  ";
+            else
+             cout << i << " ";
         }
         cout << endl;
     }
