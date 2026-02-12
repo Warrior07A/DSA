@@ -15,7 +15,7 @@ public:
         p2.input();
 
         b.init();
-        b.display();
+        // b.display();
     }
 
 
@@ -31,12 +31,14 @@ public:
             col--;
             
             if (!isvalid(col)){
+                cout << "Incorrect Column !" << endl;
+                b.display();
                 continue;
             }
                            
             int row = place_chip(col , currPlayer.ch);
             if (hasWon(row , col)){
-                cout << "Player " << currPlayer.name <<" / " << currPlayer.ch << " has won !!";
+                cout << "Player " << currPlayer.name <<" / " << currPlayer.ch << " has won !!" << endl;
                 b.display();
                 return ; 
             }
@@ -76,7 +78,6 @@ public:
         for(int i=0;i<4;i++){
             int cnt1 = countsimilar(row, col , DirectionV[i][0]) - 1;
             int cnt2 = countsimilar(row, col , DirectionV[i][1]) - 1;
-            cout << cnt1 << " " << cnt2 << endl;
             if (cnt1 +  1  + cnt2  >= 4) return true;
         }
         return false;

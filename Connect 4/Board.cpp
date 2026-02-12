@@ -1,9 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 const int ROWS = 6;
 const int COLS = 7;
 
 class Board{
 public : 
     char arr[6][7];
+    vector <string> v;
+    // Board(){}
+    // Board(int r ,c ){
+        // v
+    // }
 
     void init(){
         for(int i=0;i<ROWS;i++){
@@ -23,5 +31,6 @@ public :
         for(int i=1;i<=COLS;i++){
             cout << i << " ";   
         }
+        cout << endl;
     }
 };
