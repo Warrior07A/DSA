@@ -2,6 +2,7 @@
 using namespace std;
 #include "Player.cpp"
 #include "Board.cpp"
+#include "Replay.cpp"
 
 int K = 0;
 class Game
@@ -9,23 +10,27 @@ class Game
     Player p1;
     Player p2;
     Board b;
+    Replay Re;
+
 public:
     void start()
     {
         p1.input();
         p2.input();
-        int r  , c;
-        
-        cout << "Enter Row: " ;
+
+        int r  , c;        
+        cout << "Enter Number of Rows: " ;
         cin >> r;
-        cout << "Enter Column: ";
+        cout << "Enter Number of Columns: ";
         cin >> c;
 
         cout << "Enter Number of connects you wanna make !" ;
         cin >> K;
         b = Board (r,c);
+        Re.darr_init(r,c);
         // b.init(); 
         // b.display();
+        system("cls");
     }
 
 
@@ -47,15 +52,30 @@ public:
             }
                            
             int row = place_chip(col , currPlayer.ch);
+            
+            Re.add(col);
+            
             if (hasWon(row , col)){
                 cout << "Player " << currPlayer.name <<" / " << currPlayer.ch << " has won !!" << endl;
+
                 b.display();
+                cout << "Do you want to Replay?(Y/N)" << endl;
+                char ask;
+                cin >> ask;
+                if (ask == 'Y'){
+                    Re.replay_init(p1.ch , p2.ch);
+                }
                 return ; 
             }
             b.display();
             currPlayer = (currPlayer.ch == p1.ch ? p2 : p1);
         }
         cout << "It's a Tie " << endl;
+        char ask;
+            cin >> ask;
+        if (ask == 'Y'){
+            Re.replay_init(p1.ch , p2.ch);
+        }
         return ; 
     }
 

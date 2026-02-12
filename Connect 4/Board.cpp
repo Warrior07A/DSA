@@ -17,19 +17,19 @@ public :
 
     }
 
-    void init(){
-        for(int i=0;i<ROWS;i++){
-            for(int j=0;j<COLS;j++){
-                arr[i][j] = '-';
-            }
-        }
-    }
+    // void init(){
+    //     for(int i=0;i<ROWS;i++){
+    //         for(int j=0;j<COLS;j++){
+    //             arr[i][j] = '-';
+    //         }
+    //     }
+    // }
 
     void display(){
         for(int i=0;i<ROWS;i++){
             for(int j=0;j<COLS;j++){
                 if (COLS > 9) cout << arr[i] [j] << "  ";
-                else cout << arr[i][j] << " ";
+                else cout << arr[i][j] << "  ";
             }
             cout << endl;
         }

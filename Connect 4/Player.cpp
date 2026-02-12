@@ -7,9 +7,9 @@ public :
     char ch;
 
     void input (){
-        cout << "Enter your name : "<< endl;
+        cout << "Enter Player Name : "<< endl;
         cin >> name;
-        cout << "Enter your symbol :" << endl;
+        cout << "Enter your Symbol :" << endl;
         cin >> ch;
         
     }
